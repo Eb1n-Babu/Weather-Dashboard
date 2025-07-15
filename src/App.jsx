@@ -1,24 +1,25 @@
-import { useState } from 'react'
-import './App.css'
-import WeatherCard from "./components/WeatherCard.jsx";
-import ChartSection from "./components/ChartSection.jsx";
+import { useState } from 'react';
+import './App.css';
+import WeatherCard from './components/WeatherCard';
+import ChartSection from './components/ChartSection';
 
 function App() {
-  const [units, setUnits] = useState('metrics')
+    const [unit, setUnit] = useState('metric');
 
-    const  ToggleUnit = () => {
-        setUnits((prev)=>(prev === 'metrics' ? 'imperial' : 'metrics'));
-    }
+    const toggleUnit = () => {
+        setUnit((prev) => (prev === 'metric' ? 'imperial' : 'metric'));
+    };
 
     return (
-      <div className="App">
-          <h1>🌦 Weather Dashboard</h1>
-          <button onClick={ToggleUnit}>Switch to {units === 'metrics'? 'Fahrenheit' : 'Celsius'}</button>
-          <WeatherCard unit={units}/>
-          <ChartSection/>
-      </div>
-
-  )
+        <div className="App">
+            <h1>🌦 Weather Dashboard</h1>
+            <button onClick={toggleUnit}>
+                Switch to {unit === 'metric' ? 'Fahrenheit' : 'Celsius'}
+            </button>
+            <WeatherCard unit={unit} />
+            <ChartSection />
+        </div>
+    );
 }
 
-export default App
+export default App;

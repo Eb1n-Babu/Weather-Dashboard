@@ -1,5 +1,5 @@
-import React from "react";
-import { Line } from "react-chartjs-2";
+import React from 'react';
+import { Line } from 'react-chartjs-2';
 import {
     Chart as ChartJS,
     LineElement,
@@ -7,22 +7,28 @@ import {
     LinearScale,
     Title,
     CategoryScale,
-} from "chart.js";
-import "./ChartSection.css"; // 👈 import the CSS
+} from 'chart.js';
+import './ChartSection.css';
 
-ChartJS.register(LineElement, PointElement, LinearScale, Title, CategoryScale);
+ChartJS.register(
+    LineElement,
+    PointElement,
+    LinearScale,
+    Title,
+    CategoryScale
+);
 
 const ChartSection = () => {
     const mockData = [22, 24, 25, 23, 26];
 
     const chartData = {
-        labels: ["Mon", "Tue", "Wed", "Thu", "Fri"],
+        labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri'],
         datasets: [
             {
-                label: "Temperature (°C)",
+                label: 'Temperature (°C)',
                 data: mockData,
                 fill: false,
-                borderColor: "rgba(75,192,192,1)",
+                borderColor: 'rgba(75,192,192,1)',
                 tension: 0.3,
             },
         ],
