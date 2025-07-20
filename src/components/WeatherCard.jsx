@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 
+const API_KEY = import.meta.env.VITE_API_KEY;
+
 function WeatherCard({ unit }) {
     const [city, setCity] = useState('');
     const [weather, setWeather] = useState(null);
@@ -8,7 +10,7 @@ function WeatherCard({ unit }) {
     const fetchWeather = async () => {
         try {
             const res = await fetch(
-                `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=${unit}&appid=${process.env.REACT_APP_API_KEY}`
+                `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=${unit}&appid=${API_KEY}`
             );
             const data = await res.json();
 
