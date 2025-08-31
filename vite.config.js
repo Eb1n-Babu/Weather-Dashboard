@@ -3,5 +3,5 @@ import react from '@vitejs/plugin-react';
 
 export default defineConfig({
     plugins: [react()],
-    base: '/Weather-Dashboard/', // 👈 Required for GitHub Pages
+    /*base: '/Weather-Dashboard/', // 👈 Required for GitHub Pages*/
 });
