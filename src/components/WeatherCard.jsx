@@ -32,14 +32,14 @@ function WeatherCard({ unit }) {
     return (
         <div>
             <label>
-                Enter City Name:
+                Enter City Name    :
                 <input
                     type="text"
                     value={city}
                     onChange={(e) => setCity(e.target.value)}
                     placeholder="e.g., Tokyo"
                 />
-            </label>
+            </label><br/>
             <button onClick={fetchWeather}>Fetch Weather</button>
 
             {error && <p style={{ color: 'red' }}>⚠️ {error}</p>}
